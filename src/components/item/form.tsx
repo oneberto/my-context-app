@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../button";
+import { CloseIcon } from "../icons/close";
 import { SaveIcon } from "../icons/save";
-import { TrashIcon } from "../icons/trash";
 import Input from "../input";
 import { Styles } from "./styles";
 
@@ -35,8 +35,8 @@ const ItemForm = ({ onSubmit }: IProps) => {
                 <Button onClick={onSubmit}>
                     <SaveIcon />
                 </Button>
-                <Button>
-                    <TrashIcon />
+                <Button onClick={onSubmit}>
+                    <CloseIcon />
                 </Button>
             </Styles.GroupButtons>
         </>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../button";
 import { PencilIcon } from "../icons/pencil";
+import { TrashIcon } from "../icons/trash";
 import ItemForm from "./form";
 import { Styles } from "./styles";
 
@@ -29,6 +30,9 @@ const Item = ({ position }: IProps) => {
                     <Styles.GroupButtons>
                         <Button onClick={handleClickEdit}>
                             <PencilIcon />
+                        </Button>
+                        <Button>
+                            <TrashIcon />
                         </Button>
                     </Styles.GroupButtons>
                 </>
