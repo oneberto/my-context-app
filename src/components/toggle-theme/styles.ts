@@ -22,6 +22,7 @@ const Container = styled.div`
 
 const Icon = styled.span`
     display: flex;
+    transition: transform 0.5s ease-in-out;
 
     ${({ theme }) => (theme.name === "dark" ? right : "")};
 
@@ -40,6 +41,7 @@ const Bull = styled.span`
     background: ${({ theme }) => theme.contrast.background};
     border: 1px solid ${({ theme }) => theme.borderColor};
     position: absolute;
+    transition: transform 0.5s ease-in-out;
 
     ${({ theme }) => (theme.name === "light" ? right : left)};
 `;
