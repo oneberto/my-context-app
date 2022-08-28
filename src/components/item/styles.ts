@@ -10,10 +10,12 @@ const Container = styled.div`
 
     > strong {
         width: 40px;
+        color: ${({ theme }) => theme.color};
     }
 
     > p {
         flex: 1;
+        color: ${({ theme }) => theme.color};
     }
 
     > ${InputStyles.Container} {
