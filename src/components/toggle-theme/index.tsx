@@ -5,7 +5,7 @@ import { SunIcon } from "../icons/sun";
 import { Styles } from "./styles";
 
 const ToggleTheme = () => {
-    const theme = mockTheme.dark;
+    const theme = mockTheme.light;
 
     return (
         <Styles.Container>
