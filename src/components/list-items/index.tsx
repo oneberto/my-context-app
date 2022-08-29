@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Item from "../item";
 import { Styles } from "./styles";
-
-import { v4 as uuidv4 } from "uuid";
 import Button from "../button";
+import { useAppContext } from "../../context/hook";
 
 const ListItems = () => {
-    const [items, setItems] = useState<string[]>([uuidv4()]);
-
-    const handleClickCreate = () => setItems((old) => [...old, uuidv4()]);
+    const { state, createNewItem } = useAppContext();
 
     return (
         <Styles.Container>
-            <Button onClick={handleClickCreate}>Create new person</Button>
-            {items.map((id, index) => (
-                <Item key={id} position={index} />
+            <Button onClick={createNewItem}>Create new person</Button>
+            {state.items.map((item, index) => (
+                <Item key={item.id} position={index} {...item} />
             ))}
         </Styles.Container>
     );

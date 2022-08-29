@@ -7,6 +7,8 @@ interface IProps {
     type?: string;
     placeholder?: string;
     onChangeText?(value: string): void;
+    autoFocus?: boolean;
+    value?: any;
 }
 
 const Input = ({
@@ -15,6 +17,8 @@ const Input = ({
     label,
     placeholder,
     onChangeText,
+    autoFocus = false,
+    value,
 }: IProps) => {
     return (
         <Styles.Container>
@@ -25,6 +29,8 @@ const Input = ({
                 name={type}
                 id={type}
                 autoComplete="off"
+                autoFocus={autoFocus}
+                value={value}
                 {...(!!onChangeText && {
                     onChange: (event) => onChangeText(event?.target?.value),
                 })}

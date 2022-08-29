@@ -1,17 +1,17 @@
 import React from "react";
-import { theme as mockTheme } from "../../config/theme";
+import { useAppContext } from "../../context/hook";
 import { MoonIcon } from "../icons/moon";
 import { SunIcon } from "../icons/sun";
 import { Styles } from "./styles";
 
 const ToggleTheme = () => {
-    const theme = mockTheme.light;
+    const { state, toggleTheme } = useAppContext();
 
     return (
-        <Styles.Container>
+        <Styles.Container onClick={toggleTheme}>
             <Styles.Bull />
             <Styles.Icon>
-                {theme.name === "light" ? <SunIcon /> : <MoonIcon />}
+                {state.themeName === "light" ? <SunIcon /> : <MoonIcon />}
             </Styles.Icon>
         </Styles.Container>
     );
